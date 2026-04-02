@@ -1,0 +1,44 @@
+.inform-bar {
+  background: #d70018;
+  color: #ffffff;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.inform-left,
+.inform-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.inform-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.inform-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.inform-user-name,
+.inform-cart-count {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.inform-separator {
+  color: #ffd9de;
+}

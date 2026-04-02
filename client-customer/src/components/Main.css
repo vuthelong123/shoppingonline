@@ -1,0 +1,41 @@
+.body-customer {
+  min-height: 100vh;
+  background: #f6f6f6;
+  font-family: Arial, sans-serif;
+}
+
+/* Header (Menu + Inform) */
+.customer-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Nội dung */
+.customer-content {
+  padding: 20px;
+}
+
+/* Card chung */
+.customer-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Title chung */
+.customer-title {
+  text-align: center;
+  color: #d70018;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* Responsive nhẹ */
+@media (max-width: 768px) {
+  .customer-content {
+    padding: 12px;
+  }
+}

@@ -1,0 +1,71 @@
+/* ===== Tổng layout ===== */
+.category-container {
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+  background: #f6f6f6;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Bảng bên trái ===== */
+.category-list {
+  width: 40%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.category-list h2 {
+  text-align: center;
+  color: #d70018; /* đỏ chủ đạo */
+  margin-bottom: 15px;
+}
+
+/* ===== Table ===== */
+.datatable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header */
+.datatable th {
+  background-color: #d70018;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* Row */
+.datatable td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+/* Hover */
+.datatable tr:hover {
+  background-color: #fff1f2;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Selected row */
+.datatable tr.active {
+  background-color: #ffe4e6;
+  border-left: 4px solid #d70018;
+}
+
+/* ===== Detail bên phải ===== */
+.category-detail {
+  width: 60%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ===== Clear ===== */
+.float-clear {
+  clear: both;
+}

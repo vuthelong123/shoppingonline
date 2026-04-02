@@ -1,0 +1,81 @@
+.myorders-container {
+  padding: 24px;
+  background: #f6f6f6;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.myorders-section {
+  max-width: 1200px;
+  margin: 0 auto 28px auto;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+.myorders-title {
+  text-align: center;
+  color: #d70018;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.myorders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.myorders-table th {
+  background: #d70018;
+  color: #ffffff;
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.myorders-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eeeeee;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.myorders-table tr:hover {
+  background: #fff1f2;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.myorders-image {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.myorders-status {
+  font-weight: bold;
+  color: #d70018;
+}
+
+@media (max-width: 768px) {
+  .myorders-container {
+    padding: 12px;
+  }
+
+  .myorders-section {
+    padding: 14px;
+  }
+
+  .myorders-title {
+    font-size: 22px;
+  }
+}

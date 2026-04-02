@@ -1,0 +1,132 @@
+.product-detail-box {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.product-detail-title {
+  text-align: center;
+  color: #d70018;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.product-detail-form {
+  width: 100%;
+}
+
+.product-detail-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-detail-table td {
+  padding: 10px 8px;
+  vertical-align: middle;
+}
+
+.product-detail-label {
+  width: 100px;
+  font-weight: bold;
+  color: #d70018;
+}
+
+.product-detail-input,
+.product-detail-select,
+.product-detail-file,
+.product-detail-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: #ffffff;
+  transition: 0.2s;
+}
+
+.product-detail-input:focus,
+.product-detail-select:focus,
+.product-detail-file:focus,
+.product-detail-textarea:focus {
+  border-color: #d70018;
+  box-shadow: 0 0 0 3px rgba(215, 0, 24, 0.12);
+}
+
+.product-detail-input[readonly] {
+  background: #f8f8f8;
+  color: #666666;
+}
+
+.product-detail-textarea {
+  resize: vertical;
+  min-height: 110px;
+  font-family: Arial, sans-serif;
+}
+
+.product-detail-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.product-detail-btn {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+.btn-add {
+  background: #d70018;
+  color: #ffffff;
+}
+
+.btn-add:hover {
+  background: #b80014;
+}
+
+.btn-update {
+  background: #ffffff;
+  color: #d70018;
+  border: 1px solid #d70018;
+}
+
+.btn-update:hover {
+  background: #fff1f2;
+}
+
+.btn-delete {
+  background: #ffeaea;
+  color: #d70018;
+  border: 1px solid #f3b5bc;
+}
+
+.btn-delete:hover {
+  background: #ffd9de;
+}
+
+.product-preview-cell {
+  text-align: center;
+  padding-top: 16px;
+}
+
+.product-preview-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 2px solid #d70018;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(215, 0, 24, 0.12);
+}
