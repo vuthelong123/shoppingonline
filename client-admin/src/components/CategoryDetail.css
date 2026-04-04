@@ -22,6 +22,7 @@
 .category-detail-table {
   width: 100%;
   border-collapse: collapse;
+  color: #111827;
 }
 
 .category-detail-table td {
@@ -44,7 +45,7 @@
   font-size: 14px;
   box-sizing: border-box;
   transition: 0.2s;
-  background: #fff;
+  background: #ffffff;
 }
 
 .category-detail-input:focus {
@@ -65,7 +66,7 @@
 }
 
 .category-detail-btn {
-  border: none;
+  border: 1px solid #e2e8f0;
   padding: 10px 16px;
   border-radius: 8px;
   font-weight: bold;
@@ -90,7 +91,7 @@
 }
 
 .btn-update:hover {
-  background: #fff1f2;
+  background: #ffffff1f2;
 }
 
 .btn-delete {

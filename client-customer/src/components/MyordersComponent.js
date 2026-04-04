@@ -25,7 +25,7 @@ class Myorders extends Component {
           <td>{new Date(item.cdate).toLocaleString()}</td>
           <td>{item.customer.name}</td>
           <td>{item.customer.phone}</td>
-          <td>{item.total}</td>
+          <td>{item.total.toLocaleString('vi-VN')} ₫</td>
           <td>
             <span className="myorders-status">{item.status}</span>
           </td>
@@ -48,9 +48,9 @@ class Myorders extends Component {
                 alt={item.product.name}
               />
             </td>
-            <td>{item.product.price}</td>
+            <td>{item.product.price.toLocaleString('vi-VN')} ₫</td>
             <td>{item.quantity}</td>
-            <td>{item.product.price * item.quantity}</td>
+            <td>{(item.product.price * item.quantity).toLocaleString('vi-VN')} ₫</td>
           </tr>
         );
       });
@@ -60,7 +60,7 @@ class Myorders extends Component {
       <div className="myorders-container">
         <div className="myorders-section">
           <h2 className="myorders-title">ORDER LIST</h2>
-          <table className="myorders-table">
+          <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
               <tr>
                 <th>ID</th>
@@ -72,13 +72,13 @@ class Myorders extends Component {
               </tr>
               {orders}
             </tbody>
-          </table>
+          </table></div>
         </div>
 
         {this.state.order ? (
           <div className="myorders-section">
             <h2 className="myorders-title">ORDER DETAIL</h2>
-            <table className="myorders-table">
+            <div className="modern-table-wrapper"><table className="modern-table">
               <tbody>
                 <tr>
                   <th>No.</th>
@@ -91,7 +91,7 @@ class Myorders extends Component {
                 </tr>
                 {items}
               </tbody>
-            </table>
+            </table></div>
           </div>
         ) : (
           <div />

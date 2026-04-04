@@ -1,14 +1,6 @@
 /* styles.css */
-.body-customer {
-  width: 1150px;
-  height: fit-content;
-  margin: 0px auto;
-}
-.body-admin {
-  width: fit-content;
-  height: fit-content;
-  margin: 0px auto;
-}
+.body-customer { width: 100%; min-height: 100vh; }
+.body-admin { width: 100%; min-height: 100vh; }
 div.inline {
   display: inline-block;
 }

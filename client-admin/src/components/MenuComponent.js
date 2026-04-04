@@ -10,11 +10,8 @@ class Menu extends Component {
     return (
       <div className="admin-menu-wrapper">
         <div className="admin-brand">
-          <div className="admin-brand-logo">S</div>
-          <div className="admin-brand-text">
-            <h2>Admin Panel</h2>
-            <p>Shop Management</p>
-          </div>
+          
+          <div className="admin-brand-logo">LAPTOP<span style={{color: "#ffc107"}}>PRO</span></div><div className="admin-brand-text">Admin Control Panel</div>
         </div>
 
         <ul className="admin-menu-list">

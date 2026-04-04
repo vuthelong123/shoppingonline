@@ -1,102 +1,82 @@
+
 .customer-menu-bar {
-  background: #d70018;
-  padding: 14px 24px;
+  background: #e50027;
+  padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  gap: 20px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+   /* Force breakout of any max-width container */
 }
 
 .customer-menu-left {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 30px;
+}
+
+.customer-brand-logo {
+  font-size: 22px;
+  font-weight: 900;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
 }
 
 .customer-menu-list {
   list-style: none;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   padding: 0;
   margin: 0;
 }
 
-.customer-menu-item {
-  margin: 0;
-}
-
 .customer-menu-link {
-  display: inline-block;
-  text-decoration: none;
   color: #ffffff;
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: 0.2s ease;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
 }
 
 .customer-menu-link:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .customer-search-form {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 320px;
 }
 
 .customer-search-input {
-  width: 240px;
-  max-width: 100%;
-  padding: 10px 12px;
+  flex: 1;
   border: none;
-  border-radius: 10px;
+  padding: 12px 16px;
   outline: none;
   font-size: 14px;
-  box-sizing: border-box;
-  background: #ffffff;
-  color: #333333;
-}
-
-.customer-search-input:focus {
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
 .customer-search-btn {
+  background: #f3f4f6;
   border: none;
-  background: #ffffff;
-  color: #d70018;
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: 0 20px;
+  color: #1f2937;
   font-weight: bold;
-  font-size: 14px;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: 0.2s;
 }
 
 .customer-search-btn:hover {
-  background: #ffecef;
-}
-
-@media (max-width: 768px) {
-  .customer-menu-bar {
-    padding: 12px;
-  }
-
-  .customer-search-form {
-    width: 100%;
-  }
-
-  .customer-search-input {
-    flex: 1;
-    width: 100%;
-  }
+  background: #e5e7eb;
 }

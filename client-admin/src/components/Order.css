@@ -1,6 +1,6 @@
 .order-container {
   padding: 20px;
-  background: #f6f6f6;
+  background: #f8f9fa;
   font-family: Arial, sans-serif;
 }
 
@@ -24,6 +24,7 @@
 .datatable {
   width: 100%;
   border-collapse: collapse;
+  color: #111827;
   background: #ffffff;
 }
 
@@ -44,7 +45,7 @@
 }
 
 .datatable tr:hover {
-  background: #fff1f2;
+  background: #ffffff1f2;
   cursor: pointer;
   transition: 0.2s;
 }

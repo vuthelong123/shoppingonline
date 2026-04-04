@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import { Navigate } from 'react-router-dom';
 import './Signup.css';
 
 class Signup extends Component {
@@ -10,87 +11,49 @@ class Signup extends Component {
       txtPassword: '',
       txtName: '',
       txtPhone: '',
-      txtEmail: ''
+      txtEmail: '',
+      success: false
     };
   }
 
   render() {
+    if (this.state.success) {
+      return <Navigate to="/verify" state={{ email: this.state.txtEmail }} />;
+    }
     return (
-      <div className="signup-container">
-        <div className="signup-card">
-          <h2 className="signup-title">SIGN-UP</h2>
-
-          <form className="signup-form">
-            <div className="signup-group">
-              <label className="signup-label">Username</label>
-              <input
-                className="signup-input"
-                type="text"
-                value={this.state.txtUsername}
-                onChange={(e) =>
-                  this.setState({ txtUsername: e.target.value })
-                }
-              />
-            </div>
-
-            <div className="signup-group">
-              <label className="signup-label">Password</label>
-              <input
-                className="signup-input"
-                type="password"
-                value={this.state.txtPassword}
-                onChange={(e) =>
-                  this.setState({ txtPassword: e.target.value })
-                }
-              />
-            </div>
-
-            <div className="signup-group">
-              <label className="signup-label">Name</label>
-              <input
-                className="signup-input"
-                type="text"
-                value={this.state.txtName}
-                onChange={(e) =>
-                  this.setState({ txtName: e.target.value })
-                }
-              />
-            </div>
-
-            <div className="signup-group">
-              <label className="signup-label">Phone</label>
-              <input
-                className="signup-input"
-                type="tel"
-                value={this.state.txtPhone}
-                onChange={(e) =>
-                  this.setState({ txtPhone: e.target.value })
-                }
-              />
-            </div>
-
-            <div className="signup-group">
-              <label className="signup-label">Email</label>
-              <input
-                className="signup-input"
-                type="email"
-                value={this.state.txtEmail}
-                onChange={(e) =>
-                  this.setState({ txtEmail: e.target.value })
-                }
-              />
-            </div>
-
-            <button
-              className="signup-btn"
-              type="submit"
-              onClick={(e) => this.btnSignupClick(e)}
-            >
-              SIGN-UP
-            </button>
-          </form>
+      
+      <div className="customer-content">
+        <div className="form-container">
+          <div className="modern-form-card">
+            <h2>ĐĂNG KÝ TÀI KHOẢN</h2>
+            <p className="form-subtitle">Tạo tài khoản để nhận nhiều ưu đãi laptop</p>
+            <form className="modern-form">
+              <div className="input-group">
+                <label>Tên đăng nhập</label>
+                <input className="input-modern" type="text" value={this.state.txtUsername} onChange={(e) => { this.setState({ txtUsername: e.target.value }) }} required />
+              </div>
+              <div className="input-group">
+                <label>Mật khẩu</label>
+                <input className="input-modern" type="password" value={this.state.txtPassword} onChange={(e) => { this.setState({ txtPassword: e.target.value }) }} required />
+              </div>
+              <div className="input-group">
+                <label>Họ và tên</label>
+                <input className="input-modern" type="text" value={this.state.txtName} onChange={(e) => { this.setState({ txtName: e.target.value }) }} required />
+              </div>
+              <div className="input-group">
+                <label>Số điện thoại</label>
+                <input className="input-modern" type="tel" value={this.state.txtPhone} onChange={(e) => { this.setState({ txtPhone: e.target.value }) }} required />
+              </div>
+              <div className="input-group">
+                <label>Email xác thực</label>
+                <input className="input-modern" type="email" value={this.state.txtEmail} onChange={(e) => { this.setState({ txtEmail: e.target.value }) }} required />
+              </div>
+              <input type="submit" value="ĐĂNG KÝ" className="btn-primary btn-full" onClick={(e) => this.btnSignupClick(e)} />
+            </form>
+          </div>
         </div>
       </div>
+
     );
   }
 
@@ -137,6 +100,9 @@ class Signup extends Component {
       .then((res) => {
         const result = res.data;
         alert(result.message);
+        if (result.success) {
+          this.setState({ success: true });
+        }
       })
       .catch((error) => {
         console.error(error);

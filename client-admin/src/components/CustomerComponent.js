@@ -66,7 +66,7 @@ class Customer extends Component {
           <td>{new Date(item.cdate).toLocaleString()}</td>
           <td>{item.customer.name}</td>
           <td>{item.customer.phone}</td>
-          <td>{item.total}</td>
+          <td>{item.total.toLocaleString('vi-VN')} ₫</td>
           <td>{item.status}</td>
         </tr>
       );
@@ -87,19 +87,19 @@ class Customer extends Component {
                 alt=""
               />
             </td>
-            <td>{item.product.price}</td>
+            <td>{item.product.price.toLocaleString('vi-VN')} ₫</td>
             <td>{item.quantity}</td>
-            <td>{item.product.price * item.quantity}</td>
+            <td>{(item.product.price * item.quantity).toLocaleString('vi-VN')} ₫</td>
           </tr>
         );
       });
     }
 
     return (
-      <div className="customer-container">
+      <div className="admin-stacked-layout">
         <div className="customer-section">
           <h2 className="customer-title">CUSTOMER LIST</h2>
-          <table className="datatable">
+          <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
               <tr>
                 <th>ID</th>
@@ -113,13 +113,13 @@ class Customer extends Component {
               </tr>
               {customers}
             </tbody>
-          </table>
+          </table></div>
         </div>
 
         {this.state.orders.length > 0 ? (
           <div className="customer-section">
             <h2 className="customer-title">ORDER LIST</h2>
-            <table className="datatable">
+            <div className="modern-table-wrapper"><table className="modern-table">
               <tbody>
                 <tr>
                   <th>ID</th>
@@ -131,7 +131,7 @@ class Customer extends Component {
                 </tr>
                 {orders}
               </tbody>
-            </table>
+            </table></div>
           </div>
         ) : (
           <div />
@@ -140,7 +140,7 @@ class Customer extends Component {
         {this.state.order ? (
           <div className="customer-section">
             <h2 className="customer-title">ORDER DETAIL</h2>
-            <table className="datatable">
+            <div className="modern-table-wrapper"><table className="modern-table">
               <tbody>
                 <tr>
                   <th>No.</th>
@@ -153,7 +153,7 @@ class Customer extends Component {
                 </tr>
                 {items}
               </tbody>
-            </table>
+            </table></div>
           </div>
         ) : (
           <div />
@@ -207,7 +207,7 @@ class Customer extends Component {
       if (res.data) {
         this.apiGetCustomers();
       } else {
-        alert('SORRY!');
+        alert('Thất bại');
       }
     });
   }

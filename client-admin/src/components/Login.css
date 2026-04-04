@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f6f6f6;
+  background: #f8f9fa;
   font-family: Arial, sans-serif;
 }
 
@@ -41,7 +41,7 @@
 .login-input {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
   outline: none;
   transition: 0.2s;
@@ -59,7 +59,7 @@
   padding: 12px;
   background: #d70018;
   color: #ffffff;
-  border: none;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
   font-weight: bold;
   font-size: 15px;

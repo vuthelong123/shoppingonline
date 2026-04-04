@@ -23,7 +23,7 @@ class Product extends Component {
         <tr key={item._id} onClick={() => this.trItemClick(item)}>
           <td>{item._id}</td>
           <td>{item.name}</td>
-          <td>{item.price}</td>
+          <td>{item.price.toLocaleString('vi-VN')} ₫</td>
           <td>{new Date(item.cdate).toLocaleString()}</td>
           <td>{item.category.name}</td>
           <td>
@@ -58,10 +58,10 @@ class Product extends Component {
     });
 
     return (
-      <div className="product-container">
-        <div className="product-list-section">
+      <div className="admin-split-layout">
+        <div className="admin-list-col">
           <h2 className="product-title">PRODUCT LIST</h2>
-          <table className="datatable">
+          <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
               <tr>
                 <th>ID</th>
@@ -78,10 +78,10 @@ class Product extends Component {
                 </td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
 
-        <div className="product-detail-section">
+        <div className="admin-form-col">
           <ProductDetail
             item={this.state.itemSelected}
             curPage={this.state.curPage}

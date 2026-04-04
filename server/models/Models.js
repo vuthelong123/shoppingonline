@@ -26,6 +26,8 @@ const CustomerSchema = mongoose.Schema({
   email: String,
   active: Number,
   token: String,
+  otp: String,
+  otp_expire: Number,
 }, { versionKey: false });
 
 // ✅ Product (ĐÃ THÊM DESCRIPTION)

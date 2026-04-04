@@ -1,0 +1,14 @@
+.admin-footer {
+  background: #ffffff;
+  color: #4b5563;
+  padding: 20px;
+  border-top: 4px solid #e50027;
+  margin: 40px -40px -40px -40px; /* Counteract .admin-content 40px padding */
+  text-align: center;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}

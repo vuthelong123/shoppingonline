@@ -5,10 +5,12 @@ import Home from './HomeComponent';
 import Product from './ProductComponent';
 import ProductDetail from './ProductDetailComponent';
 import Signup from './SignupComponent';
+import VerifyOTP from './VerifyOTPComponent';
 import Login from './LoginComponent';
 import Myprofile from './MyprofileComponent';
 import Mycart from './MycartComponent';
 import Myorders from './MyordersComponent';
+import Footer from './FooterComponent';
 
 import { Routes, Route, Navigate } from 'react-router-dom';
 import './Main.css';
@@ -26,14 +28,13 @@ class Main extends Component {
 
         {/* Content */}
         <div className="customer-content">
-          <div className="customer-card">
-
-            <Routes>
+          <Routes>
               <Route path="/" element={<Navigate replace to="/home" />} />
 
               <Route path="/home" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/verify" element={<VerifyOTP />} />
 
               <Route path="/product/category/:cid" element={<Product />} />
               <Route path="/product/search/:keyword" element={<Product />} />
@@ -43,10 +44,9 @@ class Main extends Component {
               <Route path="/mycart" element={<Mycart />} />
               <Route path="/myorders" element={<Myorders />} />
             </Routes>
-
-          </div>
         </div>
 
+        <Footer />
       </div>
     );
   }

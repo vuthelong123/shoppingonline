@@ -17,43 +17,46 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="customer-login-container">
-        <div className="customer-login-card">
-          <h2 className="customer-login-title">CUSTOMER LOGIN</h2>
+      
+      <div className="customer-content">
+        <div className="form-container">
+          <div className="modern-form-card">
+            <h2>ĐĂNG NHẬP</h2>
+            <p className="form-subtitle">Đăng nhập tài khoản để mua sắm ngay</p>
+            <form className="modern-form">
+              <div className="input-group">
+                <label>Tên đăng nhập</label>
+                <input
+                  className="input-modern"
+                  type="text"
+                  value={this.state.txtUsername}
+                  onChange={(e) =>
+                    this.setState({ txtUsername: e.target.value })
+                  }
+                />
+              </div>
 
-          <form className="customer-login-form">
-            <div className="customer-login-group">
-              <label className="customer-login-label">Username</label>
-              <input
-                className="customer-login-input"
-                type="text"
-                value={this.state.txtUsername}
-                onChange={(e) =>
-                  this.setState({ txtUsername: e.target.value })
-                }
-              />
-            </div>
+              <div className="input-group">
+                <label>Mật khẩu</label>
+                <input
+                  className="input-modern"
+                  type="password"
+                  value={this.state.txtPassword}
+                  onChange={(e) =>
+                    this.setState({ txtPassword: e.target.value })
+                  }
+                />
+              </div>
 
-            <div className="customer-login-group">
-              <label className="customer-login-label">Password</label>
-              <input
-                className="customer-login-input"
-                type="password"
-                value={this.state.txtPassword}
-                onChange={(e) =>
-                  this.setState({ txtPassword: e.target.value })
-                }
-              />
-            </div>
-
-            <button
-              className="customer-login-btn"
-              type="submit"
-              onClick={(e) => this.btnLoginClick(e)}
-            >
-              LOGIN
-            </button>
-          </form>
+              <button
+                className="btn-primary btn-full"
+                type="submit"
+                onClick={(e) => this.btnLoginClick(e)}
+              >
+                ĐĂNG NHẬP
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     );

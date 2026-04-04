@@ -94,9 +94,7 @@ class Myprofile extends Component {
             >
               UPDATE
             </button>
-          </form>
-        </div>
-      </div>
+          </form></div></div>
     );
   }
 
@@ -147,10 +145,10 @@ class Myprofile extends Component {
       const result = res.data;
 
       if (result) {
-        alert('OK BABY!');
+        alert('Thành công');
         this.context.setCustomer(result);
       } else {
-        alert('SORRY BABY!');
+        alert('Thất bại');
       }
     });
   }

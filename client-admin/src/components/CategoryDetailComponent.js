@@ -16,16 +16,16 @@ class CategoryDetail extends Component {
 
   render() {
     return (
-      <div className="category-detail-box">
-        <h2 className="category-detail-title">CATEGORY DETAIL</h2>
-        <form className="category-detail-form">
-          <table className="category-detail-table">
+      <div className="admin-form-col-box">
+        <h2 className="admin-form-col-title">CATEGORY DETAIL</h2>
+        <form className="admin-form-col-form">
+          <table className="admin-form-col-table">
             <tbody>
               <tr>
-                <td className="category-detail-label">ID</td>
+                <td className="admin-form-col-label">ID</td>
                 <td>
                   <input
-                    className="category-detail-input"
+                    className="admin-form-col-input"
                     type="text"
                     value={this.state.txtID}
                     onChange={(e) => {
@@ -36,10 +36,10 @@ class CategoryDetail extends Component {
                 </td>
               </tr>
               <tr>
-                <td className="category-detail-label">Name</td>
+                <td className="admin-form-col-label">Name</td>
                 <td>
                   <input
-                    className="category-detail-input"
+                    className="admin-form-col-input"
                     type="text"
                     value={this.state.txtName}
                     onChange={(e) => {
@@ -51,21 +51,21 @@ class CategoryDetail extends Component {
               <tr>
                 <td></td>
                 <td>
-                  <div className="category-detail-actions">
+                  <div className="admin-form-col-actions">
                     <input
-                      className="category-detail-btn btn-add"
+                      className="admin-form-col-btn btn-add"
                       type="submit"
                       value="ADD NEW"
                       onClick={(e) => this.btnAddClick(e)}
                     />
                     <input
-                      className="category-detail-btn btn-update"
+                      className="admin-form-col-btn btn-update"
                       type="submit"
                       value="UPDATE"
                       onClick={(e) => this.btnUpdateClick(e)}
                     />
                     <input
-                      className="category-detail-btn btn-delete"
+                      className="admin-form-col-btn btn-delete"
                       type="submit"
                       value="DELETE"
                       onClick={(e) => this.btnDeleteClick(e)}
@@ -131,11 +131,11 @@ class CategoryDetail extends Component {
     axios.post('/api/admin/categories', cate, config).then((res) => {
       const result = res.data;
       if (result) {
-        alert('OK BABY!');
+        alert('Thành công');
         this.apiGetCategories();
         this.setState({ txtID: '', txtName: '' });
       } else {
-        alert('SORRY BABY!');
+        alert('Thất bại');
       }
     });
   }
@@ -145,10 +145,10 @@ class CategoryDetail extends Component {
     axios.put('/api/admin/categories/' + id, cate, config).then((res) => {
       const result = res.data;
       if (result) {
-        alert('OK BABY!');
+        alert('Thành công');
         this.apiGetCategories();
       } else {
-        alert('SORRY BABY!');
+        alert('Thất bại');
       }
     });
   }
@@ -158,11 +158,11 @@ class CategoryDetail extends Component {
     axios.delete('/api/admin/categories/' + id, config).then((res) => {
       const result = res.data;
       if (result) {
-        alert('OK BABY!');
+        alert('Thành công');
         this.apiGetCategories();
         this.setState({ txtID: '', txtName: '' });
       } else {
-        alert('SORRY BABY!');
+        alert('Thất bại');
       }
     });
   }

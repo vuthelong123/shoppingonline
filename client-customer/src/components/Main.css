@@ -1,41 +1,101 @@
+
 .body-customer {
+  display: flex;
+  flex-direction: column;
+  
   min-height: 100vh;
-  background: #f6f6f6;
-  font-family: Arial, sans-serif;
+  background: #f3f4f6; /* Soft grey background for depth */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #1f2937;
+
 }
 
-/* Header (Menu + Inform) */
+/* Header Wrapper */
 .customer-header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Nội dung */
+/* Main content wrapper */
 .customer-content {
-  padding: 20px;
+  flex: 1;
+  
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+
 }
 
-/* Card chung */
+/* Card UI Default */
 .customer-card {
   background: #ffffff;
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
 }
 
-/* Title chung */
+/* Standardized Titles */
 .customer-title {
   text-align: center;
-  color: #d70018;
-  font-size: 26px;
-  font-weight: bold;
-  margin-bottom: 16px;
+  color: #e50027;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Responsive nhẹ */
-@media (max-width: 768px) {
-  .customer-content {
-    padding: 12px;
-  }
+/* Base button */
+.btn-primary {
+  background: #e50027;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  background: #b9001f;
+  transform: translateY(-1px);
+}
+
+.modern-table-wrapper {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  border: 1px solid #e5e7eb;
+  overflow: auto;
+  margin-top: 20px;
+  width: 100%;
+}
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 600px;
+}
+.modern-table th {
+  background: #f9fafb;
+  color: #4b5563;
+  font-weight: 700;
+  padding: 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e5e7eb;
+}
+.modern-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #1f2937;
+  font-size: 15px;
+  vertical-align: middle;
+}
+.modern-table tbody tr:hover {
+  background: #fafafa;
 }

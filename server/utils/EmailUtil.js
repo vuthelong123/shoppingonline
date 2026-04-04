@@ -1,8 +1,8 @@
-// CLI : npm install nodemailer --save
 const nodemailer = require('nodemailer');
 const MyConstants = require('./MyConstants');
+
 const transporter = nodemailer.createTransport({
-  service: 'hotmail',
+  service: 'gmail', // changed to gmail as requested
   auth: {
     user: MyConstants.EMAIL_USER,
     pass: MyConstants.EMAIL_PASS
@@ -10,13 +10,13 @@ const transporter = nodemailer.createTransport({
 });
 
 const EmailUtil = {
-  send(email, id, token) {
-    const text = 'Thanks for signing up, please input these informations to activate your account:\n\t .id: ' + id + '\n\t . token : ' + token;
+  send(email, otp) {
+    const text = 'Your verification code is: ' + otp;
     return new Promise(function (resolve, reject) {
       const mailOptions = {
         from: MyConstants.EMAIL_USER,
         to: email,
-        subject: 'Signup | Verification',
+        subject: 'Signup | Verification (OTP)',
         text: text
       };
       transporter.sendMail(mailOptions, function (err, result) {

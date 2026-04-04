@@ -12,7 +12,7 @@ class Mycart extends Component {
     const mycart = this.context.mycart.map((item, index) => {
       return (
         <tr key={item.product._id}>
-          <td>{index + 1}</td>
+          <td><strong>#{index + 1}</strong></td>
           <td>{item.product._id}</td>
           <td>{item.product.name}</td>
           <td>{item.product.category.name}</td>
@@ -23,12 +23,12 @@ class Mycart extends Component {
               alt={item.product.name}
             />
           </td>
-          <td>{item.product.price}</td>
+          <td>{item.product.price.toLocaleString('vi-VN')} ₫</td>
           <td>{item.quantity}</td>
-          <td>{item.product.price * item.quantity}</td>
+          <td>{(item.product.price * item.quantity).toLocaleString('vi-VN')} ₫</td>
           <td>
             <span
-              className="mycart-link"
+              className="table-action-link"
               onClick={() => this.lnkRemoveClick(item.product._id)}
             >
               Remove
@@ -43,7 +43,7 @@ class Mycart extends Component {
         <div className="mycart-card">
           <h2 className="mycart-title">ITEM LIST</h2>
 
-          <table className="mycart-table">
+          <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
               <tr>
                 <th>No.</th>
@@ -67,7 +67,7 @@ class Mycart extends Component {
                 </td>
                 <td>
                   <span
-                    className="mycart-link"
+                    className="table-action-link"
                     onClick={() => this.lnkCheckoutClick()}
                   >
                     CHECKOUT
@@ -75,7 +75,7 @@ class Mycart extends Component {
                 </td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
     );
@@ -121,11 +121,11 @@ class Mycart extends Component {
       const result = res.data;
 
       if (result) {
-        alert('OK BABY!');
+        alert('Thành công');
         this.context.setMycart([]);
         this.props.navigate('/home');
       } else {
-        alert('SORRY BABY!');
+        alert('Thất bại');
       }
     });
   }

@@ -30,10 +30,10 @@ class Category extends Component {
     });
 
     return (
-      <div className="category-container">
-        <div className="category-list">
-          <h2>CATEGORY LIST</h2>
-          <table className="datatable">
+      <div className="admin-split-layout">
+        <div className="admin-list-col">
+          <h2 className="form-title">CATEGORY LIST</h2>
+          <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
               <tr>
                 <th>ID</th>
@@ -41,10 +41,10 @@ class Category extends Component {
               </tr>
               {cates}
             </tbody>
-          </table>
+          </table></div>
         </div>
 
-        <div className="category-detail">
+        <div className="admin-form-col">
           <CategoryDetail
             item={this.state.itemSelected}
             updateCategories={this.updateCategories}

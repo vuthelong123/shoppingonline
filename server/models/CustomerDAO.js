@@ -9,20 +9,25 @@ const CustomerDAO = {
     return customer;
   },
 
-  // thêm customer mới - tự active luôn
+  // thêm customer mới
   async insert(customer) {
     const mongoose = require('mongoose');
     customer._id = new mongoose.Types.ObjectId();
-    customer.active = 1;   // tự động kích hoạt
-    customer.token = '';   // không cần token nữa
     const result = await Models.Customer.create(customer);
     return result;
   },
 
-  // active account (giữ lại cũng được, nhưng gần như không cần nữa)
-  async active(_id, token, active) {
-    const query = { _id: _id, token: token };
-    const newvalues = { active: active };
+  // lấy theo email
+  async selectByEmail(email) {
+    const query = { email: email };
+    const customer = await Models.Customer.findOne(query);
+    return customer;
+  },
+
+  // active account qua OTP
+  async activeByOTP(_id) {
+    const query = { _id: _id };
+    const newvalues = { active: 1, otp: '', otp_expire: 0 };
     const result = await Models.Customer.findOneAndUpdate(query, newvalues, { new: true });
     return result;
   },

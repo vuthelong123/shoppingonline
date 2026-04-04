@@ -29,16 +29,16 @@ class ProductDetail extends Component {
     });
 
     return (
-      <div className="product-detail-box">
-        <h2 className="product-detail-title">PRODUCT DETAIL</h2>
-        <form className="product-detail-form">
-          <table className="product-detail-table">
+      <div className="admin-form-col-box">
+        <h2 className="admin-form-col-title">PRODUCT DETAIL</h2>
+        <form className="admin-form-col-form">
+          <table className="admin-form-col-table">
             <tbody>
               <tr>
-                <td className="product-detail-label">ID</td>
+                <td className="admin-form-col-label">ID</td>
                 <td>
                   <input
-                    className="product-detail-input"
+                    className="admin-form-col-input"
                     type="text"
                     value={this.state.txtID}
                     readOnly={true}
@@ -47,10 +47,10 @@ class ProductDetail extends Component {
               </tr>
 
               <tr>
-                <td className="product-detail-label">Name</td>
+                <td className="admin-form-col-label">Name</td>
                 <td>
                   <input
-                    className="product-detail-input"
+                    className="admin-form-col-input"
                     type="text"
                     value={this.state.txtName}
                     onChange={(e) => {
@@ -61,10 +61,10 @@ class ProductDetail extends Component {
               </tr>
 
               <tr>
-                <td className="product-detail-label">Price</td>
+                <td className="admin-form-col-label">Price</td>
                 <td>
                   <input
-                    className="product-detail-input"
+                    className="admin-form-col-input"
                     type="text"
                     value={this.state.txtPrice}
                     onChange={(e) => {
@@ -75,10 +75,10 @@ class ProductDetail extends Component {
               </tr>
 
               <tr>
-                <td className="product-detail-label">Description</td>
+                <td className="admin-form-col-label">Description</td>
                 <td>
                   <textarea
-                    className="product-detail-textarea"
+                    className="admin-form-col-textarea"
                     value={this.state.txtDescription}
                     onChange={(e) => {
                       this.setState({ txtDescription: e.target.value });
@@ -90,10 +90,10 @@ class ProductDetail extends Component {
               </tr>
 
               <tr>
-                <td className="product-detail-label">Image</td>
+                <td className="admin-form-col-label">Image</td>
                 <td>
                   <input
-                    className="product-detail-file"
+                    className="admin-form-col-file"
                     type="file"
                     name="fileImage"
                     accept="image/jpeg, image/png, image/gif"
@@ -103,10 +103,10 @@ class ProductDetail extends Component {
               </tr>
 
               <tr>
-                <td className="product-detail-label">Category</td>
+                <td className="admin-form-col-label">Category</td>
                 <td>
                   <select
-                    className="product-detail-select"
+                    className="admin-form-col-select"
                     value={this.state.cmbCategory}
                     onChange={(e) => {
                       this.setState({ cmbCategory: e.target.value });
@@ -121,21 +121,21 @@ class ProductDetail extends Component {
               <tr>
                 <td></td>
                 <td>
-                  <div className="product-detail-actions">
+                  <div className="admin-form-col-actions">
                     <input
-                      className="product-detail-btn btn-add"
+                      className="admin-form-col-btn btn-add"
                       type="submit"
                       value="ADD NEW"
                       onClick={(e) => this.btnAddClick(e)}
                     />
                     <input
-                      className="product-detail-btn btn-update"
+                      className="admin-form-col-btn btn-update"
                       type="submit"
                       value="UPDATE"
                       onClick={(e) => this.btnUpdateClick(e)}
                     />
                     <input
-                      className="product-detail-btn btn-delete"
+                      className="admin-form-col-btn btn-delete"
                       type="submit"
                       value="DELETE"
                       onClick={(e) => this.btnDeleteClick(e)}
@@ -191,7 +191,7 @@ class ProductDetail extends Component {
   btnAddClick(e) {
     e.preventDefault();
     const name = this.state.txtName;
-    const price = parseInt(this.state.txtPrice);
+    const price = parseInt(this.state.txtPrice.toString().replace(/[.,\s]/g, ''));
     const description = this.state.txtDescription;
     const category = this.state.cmbCategory;
     const image = this.state.imgProduct.replace(/^data:image\/[a-z]+;base64,/, '');
@@ -214,7 +214,7 @@ class ProductDetail extends Component {
     e.preventDefault();
     const id = this.state.txtID;
     const name = this.state.txtName;
-    const price = parseInt(this.state.txtPrice);
+    const price = parseInt(this.state.txtPrice.toString().replace(/[.,\s]/g, ''));
     const description = this.state.txtDescription;
     const category = this.state.cmbCategory;
     const image = this.state.imgProduct.replace(/^data:image\/[a-z]+;base64,/, '');
@@ -250,10 +250,10 @@ class ProductDetail extends Component {
     const config = { headers: { 'x-access-token': this.context.token } };
     axios.post('/api/admin/products', prod, config).then((res) => {
       if (res.data) {
-        alert('OK BABY!');
+        alert('Thành công');
         this.apiGetProducts();
       } else {
-        alert('SORRY BABY!');
+        alert('Thất bại');
       }
     });
   }
@@ -262,10 +262,10 @@ class ProductDetail extends Component {
     const config = { headers: { 'x-access-token': this.context.token } };
     axios.put('/api/admin/products/' + id, prod, config).then((res) => {
       if (res.data) {
-        alert('OK BABY!');
+        alert('Thành công');
         this.apiGetProducts();
       } else {
-        alert('SORRY BABY!');
+        alert('Thất bại');
       }
     });
   }
@@ -276,10 +276,10 @@ class ProductDetail extends Component {
       .delete('/api/admin/products/' + id, config)
       .then((res) => {
         if (res.data) {
-          alert('OK BABY!');
+          alert('Thành công');
           this.apiGetProducts();
         } else {
-          alert('SORRY BABY!');
+          alert('Thất bại');
         }
       })
       .catch((err) => {

@@ -6,6 +6,7 @@ import Category from './CategoryComponent';
 import Product from './ProductComponent';
 import Order from './OrderComponent';
 import Customer from './CustomerComponent';
+import Footer from './FooterComponent';
 
 import { Routes, Route, Navigate } from 'react-router-dom';
 import './Main.css';
@@ -26,7 +27,7 @@ class Main extends Component {
 
           {/* Content */}
           <div className="admin-content">
-            <div className="admin-card">
+            <div className="admin-page-wrapper" style={{ flex: 1 }}>
               <Routes>
                 <Route path='/admin' element={<Navigate replace to='/admin/home' />} />
                 <Route path='/admin/home' element={<Home />} />
@@ -36,8 +37,8 @@ class Main extends Component {
                 <Route path='/admin/customer' element={<Customer />} />
               </Routes>
             </div>
+            <Footer />
           </div>
-
         </div>
       );
     }

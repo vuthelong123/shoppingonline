@@ -22,7 +22,7 @@ class Order extends Component {
           <td>{new Date(item.cdate).toLocaleString()}</td>
           <td>{item.customer.name}</td>
           <td>{item.customer.phone}</td>
-          <td>{item.total}</td>
+          <td>{item.total.toLocaleString('vi-VN')} ₫</td>
           <td>
             {item.status === 'PENDING' ? (
               <span className="status-pending">{item.status}</span>
@@ -77,19 +77,19 @@ class Order extends Component {
                 alt=""
               />
             </td>
-            <td>{item.product.price}</td>
+            <td>{item.product.price.toLocaleString('vi-VN')} ₫</td>
             <td>{item.quantity}</td>
-            <td>{item.product.price * item.quantity}</td>
+            <td>{(item.product.price * item.quantity).toLocaleString('vi-VN')} ₫</td>
           </tr>
         );
       });
     }
 
     return (
-      <div className="order-container">
+      <div className="admin-stacked-layout">
         <div className="order-section">
           <h2 className="order-title">ORDER LIST</h2>
-          <table className="datatable">
+          <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
               <tr>
                 <th>ID</th>
@@ -102,13 +102,13 @@ class Order extends Component {
               </tr>
               {orders}
             </tbody>
-          </table>
+          </table></div>
         </div>
 
         {this.state.order ? (
           <div className="order-section">
             <h2 className="order-title">ORDER DETAIL</h2>
-            <table className="datatable">
+            <div className="modern-table-wrapper"><table className="modern-table">
               <tbody>
                 <tr>
                   <th>No.</th>
@@ -121,7 +121,7 @@ class Order extends Component {
                 </tr>
                 {items}
               </tbody>
-            </table>
+            </table></div>
           </div>
         ) : (
           <div />
@@ -164,7 +164,7 @@ class Order extends Component {
       if (result) {
         this.apiGetOrders();
       } else {
-        alert('SORRY BABY!');
+        alert('Thất bại');
       }
     });
   }

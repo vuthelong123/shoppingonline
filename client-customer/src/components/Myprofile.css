@@ -1,6 +1,6 @@
 .myprofile-container {
   min-height: 100vh;
-  background: #f6f6f6;
+  background: #f8f9fa;
   padding: 24px;
   font-family: Arial, sans-serif;
 }
@@ -43,7 +43,7 @@
 .myprofile-input {
   width: 100%;
   padding: 11px 12px;
-  border: 1px solid #dddddd;
+  border: 1px solid #e2e8f0ddd;
   border-radius: 10px;
   outline: none;
   font-size: 14px;
@@ -59,7 +59,7 @@
 
 .myprofile-btn {
   width: 100%;
-  border: none;
+  border: 1px solid #e2e8f0;
   background: #d70018;
   color: #ffffff;
   padding: 12px;

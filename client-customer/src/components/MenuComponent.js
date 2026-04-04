@@ -27,12 +27,9 @@ class Menu extends Component {
     return (
       <div className="customer-menu-bar">
         <div className="customer-menu-left">
+          <Link to="/home" className="customer-brand-logo">LAPTOP<span style={{color: "#ffc107"}}>PRO</span></Link>
           <ul className="customer-menu-list">
-            <li className="customer-menu-item">
-              <Link className="customer-menu-link" to="/home">
-                Home
-              </Link>
-            </li>
+            
             {cates}
           </ul>
         </div>
