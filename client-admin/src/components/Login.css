@@ -9,9 +9,9 @@
 
 /* Card login */
 .login-card {
-  width: 380px;
+  width: 340px;
   background: #ffffff;
-  padding: 30px 25px;
+  padding: 40px 30px;
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }

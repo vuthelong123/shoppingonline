@@ -21,7 +21,7 @@ class Main extends Component {
           
           {/* Sidebar */}
           <div className="admin-sidebar">
-            <div className="admin-logo">ADMIN PANEL</div>
+            {/* <div className="admin-logo">ADMIN PANEL</div> */}
             <Menu />
           </div>
 
