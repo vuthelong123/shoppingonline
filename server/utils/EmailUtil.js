@@ -1,26 +1,33 @@
-const { Resend } = require('resend');
-const resend = new Resend(process.env.RESEND_API_KEY);
+const axios = require('axios');
 
 const EmailUtil = {
   async send(email, otp) {
     try {
-      const { data, error } = await resend.emails.send({
-        from: 'Acme <onboarding@resend.dev>',
-        // IMPORTANT: Because you are using the testing domain 'onboarding@resend.dev', 
-        // you MUST send to the email address you registered your Resend account with.
-        to: email,
+      const payload = {
+        sender: {
+          name: 'ShopOnline',
+          email: 'vuthelong1009@gmail.com'
+        },
+        to: [
+          {
+            email: email
+          }
+        ],
         subject: 'Signup | Verification (OTP)',
-        text: 'Your verification code is: ' + otp
-      });
+        textContent: 'Your verification code is: ' + otp
+      };
 
-      if (error) {
-        console.error('Resend Error:', error);
-        throw error; // Throw to be caught by the caller
-      }
+      const config = {
+        headers: {
+          'api-key': process.env.BREVO_API_KEY,
+          'Content-Type': 'application/json'
+        }
+      };
 
-      return true; // Return true on success
+      await axios.post('https://api.brevo.com/v3/smtp/email', payload, config);
+      return true;
     } catch (err) {
-      console.error('Exception in EmailUtil.send:', err);
+      console.error(err.response?.data || err.message);
       throw err;
     }
   }
