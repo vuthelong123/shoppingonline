@@ -1,34 +1,29 @@
-const nodemailer = require('nodemailer');
-const MyConstants = require('./MyConstants');
-
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true,
-  auth: {
-    user: MyConstants.EMAIL_USER,
-    pass: MyConstants.EMAIL_PASS
-  },
-  tls: {
-    rejectUnauthorized: false
-  }
-});
+const { Resend } = require('resend');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const EmailUtil = {
-  send(email, otp) {
-    const text = 'Your verification code is: ' + otp;
-    return new Promise(function (resolve, reject) {
-      const mailOptions = {
-        from: MyConstants.EMAIL_USER,
+  async send(email, otp) {
+    try {
+      const { data, error } = await resend.emails.send({
+        from: 'Acme <onboarding@resend.dev>',
+        // IMPORTANT: Because you are using the testing domain 'onboarding@resend.dev', 
+        // you MUST send to the email address you registered your Resend account with.
         to: email,
         subject: 'Signup | Verification (OTP)',
-        text: text
-      };
-      transporter.sendMail(mailOptions, function (err, result) {
-        if (err) return reject(err);
-        resolve(true);
+        text: 'Your verification code is: ' + otp
       });
-    });
+
+      if (error) {
+        console.error('Resend Error:', error);
+        throw error; // Throw to be caught by the caller
+      }
+
+      return true; // Return true on success
+    } catch (err) {
+      console.error('Exception in EmailUtil.send:', err);
+      throw err;
+    }
   }
 };
+
 module.exports = EmailUtil;
