@@ -60,16 +60,16 @@ class Product extends Component {
     return (
       <div className="admin-split-layout">
         <div className="admin-list-col">
-          <h2 className="product-title">PRODUCT LIST</h2>
+          <h2 className="product-title">DANH SÁCH SẢN PHẨM</h2>
           <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
               <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Creation date</th>
-                <th>Category</th>
-                <th>Image</th>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Đơn giá</th>
+                <th>Ngày tạo</th>
+                <th>Danh mục</th>
+                <th>Hình ảnh</th>
               </tr>
               {prods}
               <tr>

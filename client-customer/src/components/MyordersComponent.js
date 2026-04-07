@@ -59,16 +59,16 @@ class Myorders extends Component {
     return (
       <div className="myorders-container">
         <div className="myorders-section">
-          <h2 className="myorders-title">ORDER LIST</h2>
+          <h2 className="myorders-title">DANH SÁCH ĐƠN HÀNG</h2>
           <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
               <tr>
-                <th>ID</th>
-                <th>Creation date</th>
-                <th>Cust. name</th>
-                <th>Cust. phone</th>
-                <th>Total</th>
-                <th>Status</th>
+                <th>Mã</th>
+                <th>Ngày tạo</th>
+                <th>Tên khách hàng</th>
+                <th>SĐT</th>
+                <th>Tổng cộng</th>
+                <th>Trạng thái</th>
               </tr>
               {orders}
             </tbody>
@@ -77,17 +77,17 @@ class Myorders extends Component {
 
         {this.state.order ? (
           <div className="myorders-section">
-            <h2 className="myorders-title">ORDER DETAIL</h2>
+            <h2 className="myorders-title">CHI TIẾT ĐƠN HÀNG</h2>
             <div className="modern-table-wrapper"><table className="modern-table">
               <tbody>
                 <tr>
-                  <th>No.</th>
-                  <th>Prod. ID</th>
-                  <th>Prod. name</th>
-                  <th>Image</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Amount</th>
+                  <th>STT</th>
+                  <th>Mã SP</th>
+                  <th>Tên SP</th>
+                  <th>Hình ảnh</th>
+                  <th>Đơn giá</th>
+                  <th>Số lượng</th>
+                  <th>Thành tiền</th>
                 </tr>
                 {items}
               </tbody>

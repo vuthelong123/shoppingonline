@@ -32,12 +32,12 @@ class Category extends Component {
     return (
       <div className="admin-split-layout">
         <div className="admin-list-col">
-          <h2 className="form-title">CATEGORY LIST</h2>
+          <h2 className="form-title">DANH SÁCH DANH MỤC</h2>
           <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
               <tr>
-                <th>ID</th>
-                <th>Name</th>
+                <th>Mã</th>
+                <th>Tên</th>
               </tr>
               {cates}
             </tbody>

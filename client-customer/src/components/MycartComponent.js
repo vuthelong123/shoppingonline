@@ -31,7 +31,7 @@ class Mycart extends Component {
               className="table-action-link"
               onClick={() => this.lnkRemoveClick(item.product._id)}
             >
-              Remove
+              Xóa
             </span>
           </td>
         </tr>
@@ -41,27 +41,27 @@ class Mycart extends Component {
     return (
       <div className="mycart-container">
         <div className="mycart-card">
-          <h2 className="mycart-title">ITEM LIST</h2>
+          <h2 className="mycart-title">GIỎ HÀNG CỦA BẠN</h2>
 
           <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
               <tr>
-                <th>No.</th>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Image</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Amount</th>
-                <th>Action</th>
+                <th>STT</th>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Danh mục</th>
+                <th>Hình ảnh</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Hành động</th>
               </tr>
 
               {mycart}
 
               <tr>
                 <td colSpan="6"></td>
-                <td className="mycart-total-label">Total</td>
+                <td className="mycart-total-label">Tổng cộng</td>
                 <td className="mycart-total-value">
                   {CartUtil.getTotal(this.context.mycart)}
                 </td>
@@ -70,7 +70,7 @@ class Mycart extends Component {
                     className="table-action-link"
                     onClick={() => this.lnkCheckoutClick()}
                   >
-                    CHECKOUT
+                    THANH TOÁN
                   </span>
                 </td>
               </tr>
@@ -93,7 +93,7 @@ class Mycart extends Component {
   }
 
   lnkCheckoutClick() {
-    if (window.confirm('ARE YOU SURE?')) {
+    if (window.confirm('Bạn có chắc chắn muốn thanh toán?')) {
       if (this.context.mycart.length > 0) {
         const total = CartUtil.getTotal(this.context.mycart);
         const items = this.context.mycart;

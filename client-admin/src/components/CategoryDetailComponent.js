@@ -17,12 +17,12 @@ class CategoryDetail extends Component {
   render() {
     return (
       <div className="admin-form-col-box">
-        <h2 className="admin-form-col-title">CATEGORY DETAIL</h2>
+        <h2 className="admin-form-col-title">CHI TIẾT DANH MỤC</h2>
         <form className="admin-form-col-form">
           <table className="admin-form-col-table">
             <tbody>
               <tr>
-                <td className="admin-form-col-label">ID</td>
+                <td className="admin-form-col-label">Mã</td>
                 <td>
                   <input
                     className="admin-form-col-input"
@@ -36,7 +36,7 @@ class CategoryDetail extends Component {
                 </td>
               </tr>
               <tr>
-                <td className="admin-form-col-label">Name</td>
+                <td className="admin-form-col-label">Tên</td>
                 <td>
                   <input
                     className="admin-form-col-input"
@@ -115,7 +115,7 @@ class CategoryDetail extends Component {
 
   btnDeleteClick(e) {
     e.preventDefault();
-    if (window.confirm('ARE YOU SURE?')) {
+    if (window.confirm('Bạn có chắc chắn muốn xóa?')) {
       const id = this.state.txtID;
       if (id) {
         this.apiDeleteCategory(id);

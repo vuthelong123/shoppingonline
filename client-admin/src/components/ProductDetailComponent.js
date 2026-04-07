@@ -30,12 +30,12 @@ class ProductDetail extends Component {
 
     return (
       <div className="admin-form-col-box">
-        <h2 className="admin-form-col-title">PRODUCT DETAIL</h2>
+        <h2 className="admin-form-col-title">CHI TIẾT SẢN PHẨM</h2>
         <form className="admin-form-col-form">
           <table className="admin-form-col-table">
             <tbody>
               <tr>
-                <td className="admin-form-col-label">ID</td>
+                <td className="admin-form-col-label">Mã</td>
                 <td>
                   <input
                     className="admin-form-col-input"
@@ -47,7 +47,7 @@ class ProductDetail extends Component {
               </tr>
 
               <tr>
-                <td className="admin-form-col-label">Name</td>
+                <td className="admin-form-col-label">Tên</td>
                 <td>
                   <input
                     className="admin-form-col-input"
@@ -61,7 +61,7 @@ class ProductDetail extends Component {
               </tr>
 
               <tr>
-                <td className="admin-form-col-label">Price</td>
+                <td className="admin-form-col-label">Đơn giá</td>
                 <td>
                   <input
                     className="admin-form-col-input"
@@ -75,7 +75,7 @@ class ProductDetail extends Component {
               </tr>
 
               <tr>
-                <td className="admin-form-col-label">Description</td>
+                <td className="admin-form-col-label">Mô tả</td>
                 <td>
                   <textarea
                     className="admin-form-col-textarea"
@@ -84,13 +84,13 @@ class ProductDetail extends Component {
                       this.setState({ txtDescription: e.target.value });
                     }}
                     rows="5"
-                    placeholder="Enter product description"
+                    placeholder="Nhập mô tả sản phẩm"
                   />
                 </td>
               </tr>
 
               <tr>
-                <td className="admin-form-col-label">Image</td>
+                <td className="admin-form-col-label">Hình ảnh</td>
                 <td>
                   <input
                     className="admin-form-col-file"
@@ -103,7 +103,7 @@ class ProductDetail extends Component {
               </tr>
 
               <tr>
-                <td className="admin-form-col-label">Category</td>
+                <td className="admin-form-col-label">Danh mục</td>
                 <td>
                   <select
                     className="admin-form-col-select"
@@ -112,7 +112,7 @@ class ProductDetail extends Component {
                       this.setState({ cmbCategory: e.target.value });
                     }}
                   >
-                    <option value="">--select--</option>
+                    <option value="">--chọn--</option>
                     {cates}
                   </select>
                 </td>
@@ -235,7 +235,7 @@ class ProductDetail extends Component {
 
   btnDeleteClick(e) {
     e.preventDefault();
-    if (window.confirm('ARE YOU SURE?')) {
+    if (window.confirm('Bạn có chắc chắn muốn xóa?')) {
       const id = this.state.txtID;
       if (id) {
         this.apiDeleteProduct(id);
