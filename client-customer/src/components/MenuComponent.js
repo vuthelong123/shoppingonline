@@ -38,7 +38,7 @@ class Menu extends Component {
           <form className="customer-search-form">
             <input
               type="search"
-              placeholder="Enter keyword"
+              placeholder="Tìm kiếm..."
               className="customer-search-input"
               value={this.state.txtKeyword}
               onChange={(e) => {
