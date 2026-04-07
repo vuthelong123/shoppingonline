@@ -68,18 +68,18 @@ class Signup extends Component {
     const email = this.state.txtEmail;
 
     if (!username || !password || !name || !phone || !email) {
-      alert('Please input username, password, name, phone and email');
+      alert('Vui lòng nhập tài khoản, mật khẩu, họ tên, điện thoại và email');
       return;
     }
 
     if (password.length < 8) {
-      alert('Password must be at least 8 characters');
+      alert('Mật khẩu phải có ít nhất 8 ký tự');
       return;
     }
 
     const phoneRegex = /^[0-9]{10}$/;
     if (!phoneRegex.test(phone)) {
-      alert('Phone must be exactly 10 digits');
+      alert('Số điện thoại phải có đúng 10 chữ số');
       return;
     }
 
@@ -106,7 +106,7 @@ class Signup extends Component {
       })
       .catch((error) => {
         console.error(error);
-        alert('API error');
+        alert('Lỗi hệ thống');
       });
   }
 }

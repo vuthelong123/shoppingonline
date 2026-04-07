@@ -206,7 +206,7 @@ class ProductDetail extends Component {
       };
       this.apiPostProduct(prod);
     } else {
-      alert('Please input name, price, category and image');
+      alert('Vui lòng nhập tên, giá, danh mục và hình ảnh');
     }
   }
 
@@ -229,7 +229,7 @@ class ProductDetail extends Component {
       };
       this.apiPutProduct(id, prod);
     } else {
-      alert('Please select an item and fill all fields');
+      alert('Vui lòng chọn một sản phẩm và điền đầy đủ thông tin');
     }
   }
 
@@ -240,7 +240,7 @@ class ProductDetail extends Component {
       if (id) {
         this.apiDeleteProduct(id);
       } else {
-        alert('Please select an item to delete');
+        alert('Vui lòng chọn một sản phẩm để xóa');
       }
     }
   }

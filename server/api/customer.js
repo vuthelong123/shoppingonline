@@ -97,7 +97,7 @@ router.post('/signup', async function (req, res) {
       } else {
         res.json({
           success: false,
-          message: 'Insert failure'
+          message: 'Thêm thất bại'
         });
       }
     }
@@ -105,7 +105,7 @@ router.post('/signup', async function (req, res) {
     console.error(err);
     res.json({
       success: false,
-      message: 'Server error'
+      message: 'Lỗi máy chủ'
     });
   }
 });
@@ -167,7 +167,7 @@ router.get('/token', JwtUtil.checkToken, function (req, res) {
 
   res.json({
     success: true,
-    message: 'Token is valid',
+    message: 'Token hợp lệ',
     token: token
   });
 });

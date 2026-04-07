@@ -12,14 +12,14 @@ class Inform extends Component {
         <div className="inform-left">
           {this.context.token === '' ? (
             <div className="inform-left">
-              <Link className="inform-link" to="/login">Login</Link>
+              <Link className="inform-link" to="/login">Đăng Nhập</Link>
               <span className="inform-separator">|</span>
-              <Link className="inform-link" to="/signup">Sign-up</Link>
+              <Link className="inform-link" to="/signup">Đăng Ký</Link>
             </div>
           ) : (
             <div className="inform-left">
               <span>
-                Hello <b className="inform-user-name">{this.context.customer.name}</b>
+                Xin chào <b className="inform-user-name">{this.context.customer.name}</b>
               </span>
               <span className="inform-separator">|</span>
               <Link
@@ -27,20 +27,20 @@ class Inform extends Component {
                 to="/home"
                 onClick={() => this.lnkLogoutClick()}
               >
-                Logout
+                Đăng Xuất
               </Link>
               <span className="inform-separator">|</span>
-              <Link className="inform-link" to="/myprofile">My profile</Link>
+              <Link className="inform-link" to="/myprofile">Hồ sơ của tôi</Link>
               <span className="inform-separator">|</span>
-              <Link className="inform-link" to="/myorders">My orders</Link>
+              <Link className="inform-link" to="/myorders">Đơn hàng của tôi</Link>
             </div>
           )}
         </div>
 
         <div className="inform-right">
-          <Link className="inform-link" to="/mycart">My cart</Link>
+            <Link className="inform-link" to="/mycart">Giỏ Hàng</Link>
           <span>
-            have <b className="inform-cart-count">{this.context.mycart.length}</b> items
+            có <b className="inform-cart-count">{this.context.mycart.length}</b> sản phẩm
           </span>
         </div>
       </div>

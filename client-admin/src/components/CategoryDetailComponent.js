@@ -97,7 +97,7 @@ class CategoryDetail extends Component {
       const cate = { name: name };
       this.apiPostCategory(cate);
     } else {
-      alert('Please input name');
+      alert('Vui lòng nhập tên');
     }
   }
 
@@ -109,7 +109,7 @@ class CategoryDetail extends Component {
       const cate = { name: name };
       this.apiPutCategory(id, cate);
     } else {
-      alert('Please input id and name');
+      alert('Vui lòng nhập ID và tên');
     }
   }
 
@@ -120,7 +120,7 @@ class CategoryDetail extends Component {
       if (id) {
         this.apiDeleteCategory(id);
       } else {
-        alert('Please input id');
+        alert('Vui lòng nhập ID');
       }
     }
   }

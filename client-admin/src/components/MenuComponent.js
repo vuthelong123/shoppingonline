@@ -11,40 +11,40 @@ class Menu extends Component {
       <div className="admin-menu-wrapper">
         <div className="admin-brand">
           
-          <div className="admin-brand-logo">LAPTOP<span style={{color: "#ffc107"}}>PRO</span></div><div className="admin-brand-text">Admin Control Panel</div>
+          <div className="admin-brand-logo">LAPTOP<span style={{color: "#ffc107"}}>PRO</span></div><div className="admin-brand-text">Bảng Điều Khiển Admin</div>
         </div>
 
         <ul className="admin-menu-list">
           <li>
             <NavLink to="/admin/home" className="admin-menu-link">
-              Home
+              Trang Chủ
             </NavLink>
           </li>
           <li>
             <NavLink to="/admin/category" className="admin-menu-link">
-              Category
+              Danh Mục
             </NavLink>
           </li>
           <li>
             <NavLink to="/admin/product" className="admin-menu-link">
-              Product
+              Sản Phẩm
             </NavLink>
           </li>
           <li>
             <NavLink to="/admin/order" className="admin-menu-link">
-              Order
+              Đơn Hàng
             </NavLink>
           </li>
           <li>
             <NavLink to="/admin/customer" className="admin-menu-link">
-              Customer
+              Khách Hàng
             </NavLink>
           </li>
         </ul>
 
         <div className="admin-user-box">
           <div className="admin-user-info">
-            <span className="admin-user-label">Hello</span>
+            <span className="admin-user-label">Xin chào</span>
             <strong>{this.context.username}</strong>
           </div>
 
@@ -53,7 +53,7 @@ class Menu extends Component {
             className="admin-logout-btn"
             onClick={() => this.lnkLogoutClick()}
           >
-            Logout
+            Đăng Xuất
           </Link>
         </div>
       </div>

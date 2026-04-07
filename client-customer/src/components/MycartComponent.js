@@ -105,7 +105,7 @@ class Mycart extends Component {
           this.props.navigate('/login');
         }
       } else {
-        alert('Your cart is empty');
+        alert('Giỏ hàng của bạn đang trống');
       }
     }
   }

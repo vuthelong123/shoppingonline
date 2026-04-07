@@ -131,7 +131,7 @@ class Myprofile extends Component {
 
       this.apiPutCustomer(this.context.customer._id, customer);
     } else {
-      alert('Please input username and password and name and phone and email');
+      alert('Vui lòng nhập đầy đủ thông tin');
     }
   }
 
