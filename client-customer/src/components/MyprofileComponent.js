@@ -24,11 +24,11 @@ class Myprofile extends Component {
     return (
       <div className="myprofile-container">
         <div className="myprofile-card">
-          <h2 className="myprofile-title">MY PROFILE</h2>
+          <h2 className="myprofile-title">HỒ SƠ CỦA TÔI</h2>
 
           <form className="myprofile-form">
             <div className="myprofile-group">
-              <label className="myprofile-label">Username</label>
+              <label className="myprofile-label">Tên đăng nhập</label>
               <input
                 className="myprofile-input"
                 type="text"
@@ -40,7 +40,7 @@ class Myprofile extends Component {
             </div>
 
             <div className="myprofile-group">
-              <label className="myprofile-label">Password</label>
+              <label className="myprofile-label">Mật khẩu</label>
               <input
                 className="myprofile-input"
                 type="password"
@@ -52,7 +52,7 @@ class Myprofile extends Component {
             </div>
 
             <div className="myprofile-group">
-              <label className="myprofile-label">Name</label>
+              <label className="myprofile-label">Họ và tên</label>
               <input
                 className="myprofile-input"
                 type="text"
@@ -64,7 +64,7 @@ class Myprofile extends Component {
             </div>
 
             <div className="myprofile-group">
-              <label className="myprofile-label">Phone</label>
+              <label className="myprofile-label">Số điện thoại</label>
               <input
                 className="myprofile-input"
                 type="tel"

@@ -27,7 +27,7 @@ class Myorders extends Component {
           <td>{item.customer.phone}</td>
           <td>{item.total.toLocaleString('vi-VN')} ₫</td>
           <td>
-            <span className="myorders-status">{item.status}</span>
+            <span className="myorders-status">{item.status === 'PENDING' ? 'CHỜ DUYỆT' : item.status === 'APPROVED' ? 'ĐÃ DUYỆT' : 'ĐÃ HỦY'}</span>
           </td>
         </tr>
       );

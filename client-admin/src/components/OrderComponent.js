@@ -25,11 +25,11 @@ class Order extends Component {
           <td>{item.total.toLocaleString('vi-VN')} ₫</td>
           <td>
             {item.status === 'PENDING' ? (
-              <span className="status-pending">{item.status}</span>
+              <span className="status-pending">CHỜ DUYỆT</span>
             ) : item.status === 'APPROVED' ? (
-              <span className="status-approved">{item.status}</span>
+              <span className="status-approved">ĐÃ DUYỆT</span>
             ) : (
-              <span className="status-cancelled">{item.status}</span>
+              <span className="status-cancelled">ĐÃ HỦY</span>
             )}
           </td>
           <td>
@@ -91,6 +91,7 @@ class Order extends Component {
           <h2 className="order-title">DANH SÁCH ĐƠN HÀNG</h2>
           <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
+              <tr>
                 <th>Mã</th>
                 <th>Ngày tạo</th>
                 <th>Tên khách hàng</th>
@@ -109,6 +110,7 @@ class Order extends Component {
             <h2 className="order-title">CHI TIẾT ĐƠN HÀNG</h2>
             <div className="modern-table-wrapper"><table className="modern-table">
               <tbody>
+                <tr>
                   <th>STT</th>
                   <th>Mã SP</th>
                   <th>Tên SP</th>

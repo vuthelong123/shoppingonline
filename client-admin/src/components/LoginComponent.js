@@ -19,11 +19,11 @@ class Login extends Component {
       return (
         <div className="login-container">
           <div className="login-card">
-            <h2 className="login-title">ADMIN LOGIN</h2>
+            <h2 className="login-title">ĐĂNG NHẬP QUẢN TRỊ</h2>
 
             <form>
               <div className="login-group">
-                <label className="login-label">Username</label>
+                <label className="login-label">Tên đăng nhập</label>
                 <input
                   className="login-input"
                   type="text"
@@ -35,7 +35,7 @@ class Login extends Component {
               </div>
 
               <div className="login-group">
-                <label className="login-label">Password</label>
+                <label className="login-label">Mật khẩu</label>
                 <input
                   className="login-input"
                   type="password"
@@ -51,7 +51,7 @@ class Login extends Component {
                 type="submit"
                 onClick={(e) => this.btnLoginClick(e)}
               >
-                LOGIN
+                ĐĂNG NHẬP
               </button>
             </form>
           </div>

@@ -47,7 +47,7 @@ class Menu extends Component {
             />
             <input
               type="submit"
-              value="SEARCH"
+              value="TÌM KIẾM"
               className="customer-search-btn"
               onClick={(e) => this.btnSearchClick(e)}
             />

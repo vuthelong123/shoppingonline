@@ -125,19 +125,19 @@ class ProductDetail extends Component {
                     <input
                       className="admin-form-col-btn btn-add"
                       type="submit"
-                      value="ADD NEW"
+                      value="THÊM MỚI"
                       onClick={(e) => this.btnAddClick(e)}
                     />
                     <input
                       className="admin-form-col-btn btn-update"
                       type="submit"
-                      value="UPDATE"
+                      value="CẬP NHẬT"
                       onClick={(e) => this.btnUpdateClick(e)}
                     />
                     <input
                       className="admin-form-col-btn btn-delete"
                       type="submit"
-                      value="DELETE"
+                      value="XÓA"
                       onClick={(e) => this.btnDeleteClick(e)}
                     />
                   </div>

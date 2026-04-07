@@ -27,9 +27,9 @@ class Customer extends Component {
           <td>{item.email}</td>
           <td>
             {item.active === 0 ? (
-              <span className="status-inactive">Inactive</span>
+              <span className="status-inactive">Ngừng hoạt động</span>
             ) : (
-              <span className="status-active">Active</span>
+              <span className="status-active">Hoạt động</span>
             )}
           </td>
           <td>
@@ -41,7 +41,7 @@ class Customer extends Component {
                   this.lnkEmailClick(item);
                 }}
               >
-                EMAIL
+                GỬI EMAIL
               </span>
             ) : (
               <span
@@ -51,7 +51,7 @@ class Customer extends Component {
                   this.lnkDeactiveClick(item);
                 }}
               >
-                DEACTIVE
+                HỦY KÍCH HOẠT
               </span>
             )}
           </td>
@@ -67,7 +67,7 @@ class Customer extends Component {
           <td>{item.customer.name}</td>
           <td>{item.customer.phone}</td>
           <td>{item.total.toLocaleString('vi-VN')} ₫</td>
-          <td>{item.status}</td>
+          <td>{item.status === 'PENDING' ? 'CHỜ DUYỆT' : item.status === 'APPROVED' ? 'ĐÃ DUYỆT' : 'ĐÃ HỦY'}</td>
         </tr>
       );
     });
@@ -98,18 +98,18 @@ class Customer extends Component {
     return (
       <div className="admin-stacked-layout">
         <div className="customer-section">
-          <h2 className="customer-title">CUSTOMER LIST</h2>
+          <h2 className="customer-title">DANH SÁCH KHÁCH HÀNG</h2>
           <div className="modern-table-wrapper"><table className="modern-table">
             <tbody>
               <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Name</th>
-                <th>Phone</th>
+                <th>Mã</th>
+                <th>Tài khoản</th>
+                <th>Mật khẩu</th>
+                <th>Tên</th>
+                <th>SĐT</th>
                 <th>Email</th>
-                <th>Active</th>
-                <th>Action</th>
+                <th>Hoạt động</th>
+                <th>Hành động</th>
               </tr>
               {customers}
             </tbody>
@@ -118,16 +118,16 @@ class Customer extends Component {
 
         {this.state.orders.length > 0 ? (
           <div className="customer-section">
-            <h2 className="customer-title">ORDER LIST</h2>
+            <h2 className="customer-title">DANH SÁCH ĐƠN HÀNG</h2>
             <div className="modern-table-wrapper"><table className="modern-table">
               <tbody>
                 <tr>
-                  <th>ID</th>
-                  <th>Creation date</th>
-                  <th>Cust. name</th>
-                  <th>Cust. phone</th>
-                  <th>Total</th>
-                  <th>Status</th>
+                  <th>Mã</th>
+                  <th>Ngày tạo</th>
+                  <th>Tên khách hàng</th>
+                  <th>SĐT</th>
+                  <th>Tổng cộng</th>
+                  <th>Trạng thái</th>
                 </tr>
                 {orders}
               </tbody>
@@ -139,17 +139,17 @@ class Customer extends Component {
 
         {this.state.order ? (
           <div className="customer-section">
-            <h2 className="customer-title">ORDER DETAIL</h2>
+            <h2 className="customer-title">CHI TIẾT ĐƠN HÀNG</h2>
             <div className="modern-table-wrapper"><table className="modern-table">
               <tbody>
                 <tr>
-                  <th>No.</th>
-                  <th>Prod. ID</th>
-                  <th>Prod. name</th>
-                  <th>Image</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Amount</th>
+                  <th>STT</th>
+                  <th>Mã SP</th>
+                  <th>Tên SP</th>
+                  <th>Hình ảnh</th>
+                  <th>Đơn giá</th>
+                  <th>Số lượng</th>
+                  <th>Thành tiền</th>
                 </tr>
                 {items}
               </tbody>
