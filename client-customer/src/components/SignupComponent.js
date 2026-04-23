@@ -68,7 +68,7 @@ class Signup extends Component {
     const email = this.state.txtEmail;
 
     if (!username || !password || !name || !phone || !email) {
-      alert('Vui lòng nhập tài khoản, mật khẩu, họ tên, điện thoại và email');
+      alert('Vui lòng không được bỏ trống ô nào hết!');
       return;
     }
 
